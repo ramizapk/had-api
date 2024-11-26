@@ -4,7 +4,7 @@ namespace App\Http\Resources\V1\App;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-
+use Illuminate\Support\Facades\Storage;
 class CustomerResource extends JsonResource
 {
     /**
@@ -18,6 +18,7 @@ class CustomerResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'phone_number' => $this->phone_number,
+            'avatar' => $this->avatar ? Storage::url($this->avatar) : null,
             'is_active' => $this->isActive(),
             'is_suspended' => $this->isSuspended(),
             'locations' => $this->whenLoaded('addresses', function () {

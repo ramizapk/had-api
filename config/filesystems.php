@@ -1,7 +1,13 @@
 <?php
 
 return [
-
+    'customer_avatars' => 'uploads/customers',     // صور العملاء
+    'delivery_agents' => 'uploads/delivery_agents', // صور مناديب التوصيل
+    'sections' => 'uploads/sections',         // صور الأقسام
+    'advertisements' => 'uploads/advertisements', // صور الإعلانات
+    'product_images' => 'uploads/products',
+    'services' => 'uploads/services',         // صور أو ملفات الخدمات
+    'service_types' => 'uploads/service_types',
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
@@ -29,18 +35,16 @@ return [
     */
 
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
             'serve' => true,
             'throw' => false,
         ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],

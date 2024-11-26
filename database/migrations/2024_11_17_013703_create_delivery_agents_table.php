@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('region')->nullable();
             $table->string('address')->nullable();
             $table->decimal('balance', 10, 2)->default(0.00);
-            $table->boolean('is_active')->default(false);
+            $table->boolean('is_active')->default(true);
             $table->decimal('latitude', 10, 8)->nullable();
             $table->decimal('longitude', 11, 8)->nullable();
             $table->enum('status', ['free', 'busy'])->default('free');

@@ -45,6 +45,7 @@ class DeliveryAgentController extends Controller
             'address' => $request->address,
             'region' => $request->region,
             'agent_no' => $agent_no,
+            'is_active' => true,
             'balance' => $request->balance ?? 0.00,
         ]);
 
